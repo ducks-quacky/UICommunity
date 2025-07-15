@@ -13,6 +13,7 @@
         color: #333;
         margin: 0;
         padding: 5px;
+        align-content: center;
     }
     h1 {
         color: #ffffff;
@@ -28,6 +29,8 @@
         justify-content: center;
         margin-top: 20px;
         z-index: 9999999999999;
+        position: sticky;
+        top: 0;
     }
 
     .links {
@@ -100,6 +103,7 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 10px;
         padding: 10px;
+        margin: 20px auto;
     }
 
     .card {
@@ -111,6 +115,8 @@
         transition: transform 0.3s ease;
         align-items: center;
         align-content: center;
+        text-align: center;
+
     }
 
     .card:hover {
@@ -132,6 +138,26 @@
         text-decoration: none;
         font-size: 16px;
         text-align: center;
+    }
+
+    .download {
+        color: #ffffff;
+        background-color: #67b6ff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .download:hover {
+        background-color: #55aaff;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
     }
 
 </style>
@@ -179,5 +205,26 @@
             <p>a Autoscaling plugin for roblox studio, has alot of cool features</p>
             <a href="https://devforum.roblox.com/t/speedportpro-new-auto-detectadjust-uploaded-image-resolutions/3243499", target="_blank", class="linktext">Link</a>
         </div>
+        <div class="card">
+            <h2 class="card-title">Halftone</h2>
+            <p>Credits: quelly</p>
+            <img class="image" src="Images/halftones/Lucky Block Yellow Outline 256.png" alt="Halftone">
+            <button class="download">Download</button>
+        </div>
 </body>
 </html>
+
+<script>
+    document.querySelector('.download').addEventListener('click', function() {
+        download('https://raw.githubusercontent.com/quelly/halftones/main/Lucky%20Block%20Yellow%20Outline%20256.png', 'Lucky Block Yellow Outline 256.png');
+    });
+
+    function download(url, filename) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
