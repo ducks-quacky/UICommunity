@@ -116,6 +116,8 @@
         align-items: center;
         align-content: center;
         text-align: center;
+        display: flex;
+        flex-direction: column;
 
     }
 
@@ -216,7 +218,7 @@
 
 <script>
     document.querySelector('.download').addEventListener('click', function() {
-        download('https://raw.githubusercontent.com/quelly/halftones/main/Lucky%20Block%20Yellow%20Outline%20256.png', 'Lucky Block Yellow Outline 256.png');
+        download('images/halftones/Lucky Block Yellow Outline 256.png', 'Lucky Block Yellow Outline 256.png');
     });
 
     function download(url, filename) {
