@@ -205,26 +205,5 @@
             <p>a Autoscaling plugin for roblox studio, has alot of cool features</p>
             <a href="https://devforum.roblox.com/t/speedportpro-new-auto-detectadjust-uploaded-image-resolutions/3243499", target="_blank", class="linktext">Link</a>
         </div>
-        <div class="card">
-            <h2 class="card-title">Halftone</h2>
-            <p>Credits: quelly</p>
-            <img class="image" src="Images/halftones/Lucky Block Yellow Outline 256.png" alt="Halftone">
-            <button class="download">Download</button>
-        </div>
 </body>
 </html>
-
-<script>
-    document.querySelector('.download').addEventListener('click', function() {
-        download('https://raw.githubusercontent.com/quelly/halftones/main/Lucky%20Block%20Yellow%20Outline%20256.png', 'Lucky Block Yellow Outline 256.png');
-    });
-
-    function download(url, filename) {
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-</script>
