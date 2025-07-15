@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Community</title>
+</head>
+</style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #131313;
+        color: #333;
+        margin: 0;
+        padding: 5px;
+    }
+    h1 {
+        color: #ffffff;
+    }
+
+    nav {
+        background-color: #1a1a1a;
+        padding: 7px;
+        border-radius: 5px;
+        align-items: center;
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        z-index: 9999999999999;
+    }
+
+    .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0%;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .linktab {
+        display: inline;
+    }
+    
+    .linktab a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+    }
+    .linktab a:hover {
+        background-color: #333;
+    }
+
+    .linktab a:active {
+        background-color: #555;
+    }
+
+    .linktab :active {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .linktab :visited {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .title {
+        text-align: center;
+        color: #ffffff;
+        font-size: 25px;
+    }
+
+    .title:hover {
+        font-size: 27px;
+        text-shadow: #131313;
+        transition: linear 0.15s;
+    }
+
+    .title:hover::after {
+        color: #ffffff;
+        font-size: 30px;
+        transition: linear 0.25s;
+    }
+    
+    p {
+        color: #a5a5a5;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        background-color: #1a1a1a;
+        border-radius: 5px;
+        padding: 15px;
+        color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        align-items: center;
+        align-content: center;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card h2 {
+        margin-top: 0;
+        color: #ffffff;
+    }
+
+    .card-title {
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .linktext {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
+    }
+
+</style>
+<body> 
+    <nav>
+        <ul class="links">
+            <li class="linktab"><a href="#Home">Home</a></li>
+            <li class="linktab"><a href="#Resources">Resources</a></li>
+            <li class="linktab"><a href="#Suggest">Suggest</a></li>
+        </ul>
+    </nav>
+    <h1 class="title">Hello welcome to the UI Community - this website is WIP</h1>
+    <p>A website to get resources and updates on the user interface community!</p>
+    <div class="grid">
+        <div class="card">
+            <h2 class="card-title">Typescale</h2>
+            <p>A typing scale testing for designs</p>
+            <a href="https://typescale.com/", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card">
+            <h2 class="card-title">realtimecolors</h2>
+            <p>Ability to test color palletes on websites or anything really!</p>
+            <a href="https://www.realtimecolors.com/?colors=050315-fbfbfe-2f27ce-dedcff-433bff&fonts=Inter-Inter", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card">
+            <h2 class="card-title">iconify</h2>
+            <p>iconify, has over 200,000 open source icons that you can grab</p>
+            <a href="https://iconify.design/", target="_blank", class="linktext">Link</a>
+            <a href="https://www.figma.com/community/plugin/735098390272716381/iconify", target="_blank", class="linktext">Figma link</a>
+        </div>
+        <div class="card">
+            <h2 class="card-title">flaticon</h2>
+            <p>flaticon, has over 3 million vector icons that you can grab</p>
+            <a href="https://www.flaticon.com/", target="_blank", class="linktext">Link</a>
+            <a href="https://www.figma.com/community/plugin/1183020129233350982/flaticon-by-freepik", target="_blank", class="linktext">Figma link</a>
+        </div>
+        <div class="card">
+            <h2 class="card-title">Bloxporter</h2>
+            <p>A auto importer for figma to roblox studio</p>
+            <a href="https://devforum.roblox.com/t/bloxporter-beta-paid-fast-figma-roblox-with-custom-configurations/3501193", target="_blank", class="linktext">Link</a>
+            <a href="https://www.figma.com/community/plugin/1468127003367516309/bloxporter", target="_blank", class="linktext">Figma link</a>
+        </div>
+        <div class="card">
+            <h2 class="card-title">Speedport</h2>
+            <p>a Autoscaling plugin for roblox studio, has alot of cool features</p>
+            <a href="https://devforum.roblox.com/t/speedportpro-new-auto-detectadjust-uploaded-image-resolutions/3243499", target="_blank", class="linktext">Link</a>
+        </div>
+</body>
+</html>
