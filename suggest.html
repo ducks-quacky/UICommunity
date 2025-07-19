@@ -474,12 +474,12 @@
                     selectedFile = null;
                 } else {
                     const errorText = await response.text();
-                    submissionMessageElement.textContent = `Failed to submit suggestion: ${response.status} - ${errorText}`;
+                    submissionMessageElement.textContent = `Failed to submit suggestion`;
                     submissionMessageElement.classList.remove('text-green-400');
                     submissionMessageElement.classList.add('text-red-400');
                 }
             } catch (error) {
-                submissionMessageElement.textContent = `An error occurred: ${error.message}`;
+                submissionMessageElement.textContent = `An unexpected error occurred. Please try again later.`;
                 submissionMessageElement.classList.remove('text-green-400');
                 submissionMessageElement.classList.add('text-red-400');
             } finally {
