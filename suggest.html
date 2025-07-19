@@ -1,1 +1,512 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Community</title>
+    <meta name="description" content="A website to get resources and updates on the user interface community!">
+    <meta name="keywords" content="UI, Community, Resources, Design, Figma, Roblox">
+    <meta name="author" content="UI Community - stuxfian">
+    <meta name="theme-color" content="#131313">
+    <meta property="og:title" content="UI Community">
+    <meta property="og:description" content="A website to get resources and updates on the user interface community!">
+    <meta property="og:image" content="./Banner.png"> 
+</head>
+</style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #131313;
+        color: #333;
+        margin: 0;
+        align-content: center;
+    }
+    h1 {
+        color: #ffffff;
+    }
+    .padtop {
+        padding-top: 70px;
+    }
+
+    nav {
+        background-color: #1a1a1a;
+        padding: 7px;
+        border-radius: 5px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        z-index: 9999999999999;
+        position: fixed;
+        width: 100%;
+    }
+
+    .navdivider {
+        border-bottom: 1px solid #333;
+        margin: 0 20px;
+        height: 1px;
+        width: 100%;
+        position: fixed;
+        z-index: 99999999999999;
+        position: fixed;
+        top: 60px;
+    }
+
+    .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0%;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .linktab {
+        display: inline;
+    }
+    
+    .linktab a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+    }
+    .linktab a:hover {
+        background-color: #333;
+    }
+
+    .linktab a:active {
+        background-color: #555;
+    }
+
+    .linktab :active {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .linktab :visited {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .title {
+        text-align: center;
+        color: #ffffff;
+        font-size: 25px;
+    }
+
+    .title:hover {
+        font-size: 27px;
+        text-shadow: #131313;
+        transition: linear 0.1s;
+        color: #ffffff;
+    }
+    
+    p {
+        color: #a5a5a5;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .card {
+        background-color: #1a1a1a;
+        border-radius: 5px;
+        padding: 15px;
+        color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        align-items: center;
+        align-content: space-between;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        border: #2b2b2b 1px solid;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border: #333;
+    }
+    .card h2 {
+        margin-top: 0;
+        color: #ffffff;
+    }
+
+    .card-title {
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .linktext {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .download {
+        color: #ffffff;
+        background-color: #67b6ff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .download:hover {
+        background-color: #55aaff;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .resourcetabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .resourcetab {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .resourcetab:hover {
+        background-color: #414141;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .resourcetab:active {
+        background-color: #555;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    button.resourcetab {
+        cursor: pointer;
+        border: none;
+        color: #ffffff;
+        background-color: #1a1a1a;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+            @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        .glass-morphism-base {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease-in-out;
+        }
+        .glass-morphism-nav-base {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 0.75rem;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .container-wrapper {
+            width: 100%;
+            max-width: 1280px;
+            padding: 1rem;
+        }
+        .suggestion-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            padding: 2rem; 
+            margin: 1rem 0; 
+            background-color: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(10px);
+            border-radius: 0.75rem; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+            align-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: none;
+        }
+        label {
+            color: #ffffff;
+            font-size: 1.125rem; 
+            font-weight: 500; 
+            margin-bottom: 0.5rem; 
+        }
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 0.75rem; 
+            border-radius: 0.5rem; 
+            border: 1px solid rgba(255, 255, 255, 0.3); 
+            background-color: rgba(255, 255, 255, 0.1); 
+            color: #ffffff; 
+            font-size: 1rem; 
+            transition: all 0.3s ease-in-out; 
+        }
+        input[type="text"]::placeholder,
+        input[type="file"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus,
+        input[type="file"]:focus {
+            border-color: #67b6ff; 
+            outline: none; 
+            box-shadow: 0 0 0 2px rgba(103, 182, 255, 0.3); 
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #67b6ff, #55aaff);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem; 
+            border-radius: 0.5rem; 
+            border: none; 
+            font-size: 1.125rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: all 0.3s ease-in-out; 
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #55aaff, #67b6ff);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        }
+        button[type="submit"]:active {
+            transform: scale(0.98); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+        #submission-message {
+            margin-top: 1rem; 
+            font-size: 1.125rem; 
+            text-align: center; 
+            color: #ffffff; 
+        }
+        #selected-file-name {
+            margin-top: 0.5rem; 
+            font-size: 0.875rem; 
+            color: rgba(255, 255, 255, 0.7); 
+        }
+</style>
+<body> 
+    <nav>
+        <ul class="links">
+            <li class="linktab"><a href="/index.html">Home</a></li>
+            <li class="linktab"><a href="/suggest.html">Suggest</a></li>
+            <li class="linktab"><a href="/programs.html">Programs</a></li>
+        </ul>
+    </nav>
+    <div class="navdivider"></div>
+    <div class="padtop"></div>
+    <h1 class="title">Suggest resources here</h1>
+    <p>You may suggest textures, sunbursts, effects whatever you want, it will be reviewed, if good enough, will end up in the website.</p>
+       <section id="suggestion-page" class="hidden max-w-xl mx-auto py-8 px-4 transition-opacity duration-500 ease-in-out opacity-0">
+            <h2 class="text-3xl font-bold mb-6 text-white text-center">Suggest a Resource</h2>
+            <form id="suggestion-form" class="flex flex-col gap-4">
+                <div>
+                    <label for="discordId" class="block text-gray-300 text-lg font-medium mb-2">
+                        Your Discord ID:
+                    </label>
+                    <input
+                        type="text"
+                        id="discordId"
+                        class="w-full p-3 rounded-lg glass-morphism-base text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out"
+                        placeholder="e.g., YourUsername#1234 or YourUserID"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="file-upload" class="block text-gray-300 text-lg font-medium mb-2">
+                        Upload File (e.g., screenshot, resource file):
+                    </label>
+                    <input
+                        type="file"
+                        id="file-upload"
+                        class="w-full p-3 rounded-lg glass-morphism-base text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600 transition-all duration-200 ease-in-out"
+                    />
+                    <p id="selected-file-name" class="mt-2 text-sm text-gray-400 hidden"></p>
+                </div>
+                <button
+                    type="submit"
+                    id="submit-suggestion-btn"
+                    class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform active:scale-98 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-70 transition-all duration-300 ease-in-out"
+                >
+                    Submit Suggestion
+                </button>
+                <p id="submission-message" class="mt-4 text-center text-lg"></p>
+            </form>
+        </section>
+</body>
+</html>
+
+<script>
+    document.querySelectorAll('.download').forEach(button => {
+        button.addEventListener('click', function() {
+            const src = this.getAttribute('src');
+            const filename = this.getAttribute(`filename`);
+            download(src, filename);
+        });
+    });
+
+    function download(url, filename) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    const resourcetabs = document.querySelectorAll('.resourcetab');
+    resourcetabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const id = this.id;
+            document.querySelectorAll('.card').forEach(card => {
+                if (card.id === id || card.id === '') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                } if (id === 'all') {
+                    card.style.display = 'block';
+                }
+            });
+        });
+    });
+            document.getElementById('file-upload').addEventListener('change', (event) => {
+            selectedFile = event.target.files[0];
+            const fileNameDisplay = document.getElementById('selected-file-name');
+            if (selectedFile) {
+                fileNameDisplay.textContent = `Selected file: ${selectedFile.name}`;
+                fileNameDisplay.classList.remove('hidden');
+            } else {
+                fileNameDisplay.textContent = '';
+                fileNameDisplay.classList.add('hidden');
+            }
+        });
+
+        // Handle form submission for suggestions
+        document.getElementById('suggestion-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const submissionMessageElement = document.getElementById('submission-message');
+            const submitButton = document.getElementById('submit-suggestion-btn');
+            submissionMessageElement.textContent = '';
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-70', 'cursor-not-allowed');
+            submitButton.textContent = 'Submitting...';
+
+            const discordId = document.getElementById('discordId').value;
+            const webhookUrl = 'https://discord.com/api/webhooks/1396002265487380512/yMGk_iFl1gcQvuLQmFw_SIc2l-zBx-h4aFzVcmF5tOitrKyY8ffl8Dhj-ZcsZ-0EAoXR';
+
+            const formData = new FormData();
+            formData.append('content', `New suggestion from Discord ID: ${discordId}`);
+
+            if (selectedFile) {
+                formData.append('file', selectedFile);
+            }
+
+            try {
+                const response = await fetch('/api/suggestion', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+
+
+                if (response.ok) {
+                    submissionMessageElement.textContent = 'Suggestion submitted successfully!';
+                    submissionMessageElement.classList.remove('text-red-400');
+                    submissionMessageElement.classList.add('text-green-400');
+                    document.getElementById('discordId').value = '';
+                    document.getElementById('file-upload').value = ''; // Clear file input
+                    document.getElementById('selected-file-name').textContent = '';
+                    document.getElementById('selected-file-name').classList.add('hidden');
+                    selectedFile = null;
+                } else {
+                    const errorText = await response.text();
+                    submissionMessageElement.textContent = `Failed to submit suggestion: ${response.status} - ${errorText}`;
+                    submissionMessageElement.classList.remove('text-green-400');
+                    submissionMessageElement.classList.add('text-red-400');
+                }
+            } catch (error) {
+                submissionMessageElement.textContent = `An error occurred: ${error.message}`;
+                submissionMessageElement.classList.remove('text-green-400');
+                submissionMessageElement.classList.add('text-red-400');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
+                submitButton.textContent = 'Submit Suggestion';
+            }
+        });
+
+        // Initialize the page on load
+        window.onload = function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Add initial transition and opacity classes to all sections
+            document.querySelectorAll('main section').forEach(section => {
+                section.classList.add('transition-opacity', 'duration-500', 'ease-in-out', 'opacity-0'); // Increased duration
+            });
+
+            // Set the initial active page to be visible before the first updatePageVisibility call
+            const initialPageElement = document.getElementById(`${activePage}-page`);
+            if (initialPageElement) {
+                initialPageElement.classList.remove('hidden'); // Make it visible initially
+            }
+            updatePageVisibility(); // Set initial page visibility and fade in the home page
+            renderResources(); // Render initial resources
+        };
+</script>
