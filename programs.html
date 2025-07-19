@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Community</title>
+    <meta name="description" content="A website to get resources and updates on the user interface community!">
+    <meta name="keywords" content="UI, Community, Resources, Design, Figma, Roblox">
+    <meta name="author" content="UI Community - stuxfian">
+    <meta name="theme-color" content="#131313">
+    <meta property="og:title" content="UI Community">
+    <meta property="og:description" content="A website to get resources and updates on the user interface community!">
+    <meta property="og:image" content="./Banner.png"> 
+</head>
+</style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #131313;
+        color: #333;
+        margin: 0;
+        align-content: center;
+    }
+    h1 {
+        color: #ffffff;
+    }
+    .padtop {
+        padding-top: 70px;
+    }
+
+    nav {
+        background-color: #1a1a1a;
+        padding: 7px;
+        border-radius: 5px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        z-index: 9999999999999;
+        position: fixed;
+        width: 100%;
+    }
+
+    .navdivider {
+        border-bottom: 1px solid #333;
+        margin: 0 20px;
+        height: 1px;
+        width: 100%;
+        position: fixed;
+        z-index: 99999999999999;
+        position: fixed;
+        top: 60px;
+    }
+
+    .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0%;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .linktab {
+        display: inline;
+    }
+    
+    .linktab a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+    }
+    .linktab a:hover {
+        background-color: #333;
+    }
+
+    .linktab a:active {
+        background-color: #555;
+    }
+
+    .linktab :active {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .linktab :visited {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    .title {
+        text-align: center;
+        color: #ffffff;
+        font-size: 25px;
+    }
+
+    .title:hover {
+        font-size: 27px;
+        text-shadow: #131313;
+        transition: linear 0.1s;
+        color: #ffffff;
+    }
+    
+    p {
+        color: #a5a5a5;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .card {
+        background-color: #1a1a1a;
+        border-radius: 5px;
+        padding: 15px;
+        color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        align-items: center;
+        align-content: space-between;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        border: #2b2b2b 1px solid;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border: #333;
+    }
+    .card h2 {
+        margin-top: 0;
+        color: #ffffff;
+    }
+
+    .card-title {
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .linktext {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .download {
+        color: #ffffff;
+        background-color: #67b6ff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .download:hover {
+        background-color: #55aaff;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .resourcetabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .resourcetab {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .resourcetab:hover {
+        background-color: #414141;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .resourcetab:active {
+        background-color: #555;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    button.resourcetab {
+        cursor: pointer;
+        border: none;
+        color: #ffffff;
+        background-color: #1a1a1a;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+</style>
+<body> 
+    <nav>
+        <ul class="links">
+            <li class="linktab"><a href="/index.html">Home</a></li>
+            <li class="linktab"><a href="/suggest.html">Suggest</a></li>
+            <li class="linktab"><a href="/programs.html">Programs</a></li>
+        </ul>
+    </nav>
+    <div class="navdivider"></div>
+    <div class="padtop"></div>
+    <h1 class="title">Hello welcome to the UI Community - this website is WIP</h1>
+    <p>A website to get resources and updates on the user interface community!</p>
+    <div class="resourcetabs">
+        <a>
+            <button class="resourcetab" id="plugins">plugins</button>
+            <button class="resourcetab" id="icons">icons</button>
+            <button class="resourcetab" id="textures">textures</button>
+            <button class="resourcetab" id="backgrounds">backgrounds</button>
+            <button class="resourcetab" id="effects">effects</button>
+            <button class="resourcetab" id="websites">websites</button>
+            <button class="resourcetab" id="all">all</button>
+        </a> 
+    </div>
+    </nav>
+    <div class="grid">
+        <div class="card" id="websites">
+            <h2 class="card-title">Typescale</h2>
+            <p>A typing scale testing for designs</p>
+            <a href="https://typescale.com/", target="_blank", class="linktext",>Link</a>
+        </div>
+        <div class="card" id="websites">
+            <h2 class="card-title">realtimecolors</h2>
+            <p>Ability to test color palletes on websites or anything really!</p>
+            <a href="https://www.realtimecolors.com/?colors=050315-fbfbfe-2f27ce-dedcff-433bff&fonts=Inter-Inter", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="websites">
+            <h2 class="card-title">Reference database</h2>
+            <p>A website that allows you to see references of UIs, has a good amount.</p>
+            <a href="https://www.gameuidatabase.com/", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="websites">
+            <h2 class="card-title">adobe colors</h2>
+            <p>with this, your able to generate and decide colors that you would want to match</p>
+            <a href="https://color.adobe.com/", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="websites">
+            <h2 class="card-title">Google fonts</h2>
+            <p>able to get fonts/download fonts from this website</p>
+            <a href="https://fonts.google.com/", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="icons">
+            <h2 class="card-title">iconify</h2>
+            <p>iconify, has over 200,000 open source icons that you can grab</p>
+            <a href="https://iconify.design/", target="_blank", class="linktext">Link</a>
+            <a href="https://www.figma.com/community/plugin/735098390272716381/iconify", target="_blank", class="linktext">Figma link</a>
+        </div>
+        <div class="card" id="icons">
+            <h2 class="card-title">mozert</h2>
+            <p>mozert icon pack</p>
+            <a href="https://mozert.itch.io/cartoon-vectors-free-icon-pack", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="icons">
+            <h2 class="card-title">Keyboard icons</h2>
+            <p>Keyboard icons, credits to elias theymightbelias</p>
+            <a href="https://devforum.roblox.com/t/free-keyboard-and-controller-icons/1606855", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="icons">
+            <h2 class="card-title">flaticon</h2>
+            <p>flaticon, has over 3 million vector icons that you can grab</p>
+            <a href="https://www.flaticon.com/", target="_blank", class="linktext">Link</a>
+            <a href="https://www.figma.com/community/plugin/1183020129233350982/flaticon-by-freepik", target="_blank", class="linktext">Figma link</a>
+        </div>
+        <div class="card" id="plugins">
+            <h2 class="card-title">Bloxporter</h2>
+            <p>A auto importer for figma to roblox studio</p>
+            <a href="https://devforum.roblox.com/t/bloxporter-beta-paid-fast-figma-roblox-with-custom-configurations/3501193", target="_blank", class="linktext">Link</a>
+            <a href="https://www.figma.com/community/plugin/1468127003367516309/bloxporter", target="_blank", class="linktext">Figma link</a>
+        </div>
+        <div class="card" id="plugins">
+            <h2 class="card-title">Speedport</h2>
+            <p>a Autoscaling plugin for roblox studio, has alot of cool features</p>
+            <a href="https://devforum.roblox.com/t/speedportpro-new-auto-detectadjust-uploaded-image-resolutions/3243499", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="plugins">
+            <h2 class="card-title">Overlayed</h2>
+            <p>You can now organize your reference frames much easier for manual imports!</p>
+            <a href="https://create.roblox.com/store/asset/127688653187408/Overlayed", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="icons">
+            <h2 class="card-title">Rhos icons</h2>
+            <p>Cartoony icons</p>
+            <a href="https://rhosgfx.itch.io/", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="halftone1">Halftone</h2>
+            <p>Credits: quelly</p>
+            <img class="image" src="images/halftones/quelly1.png" alt="Halftone">
+            <button class="download" src="images/halftones/quelly1.png" filename="halftone1.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="halftone2">Halftone</h2>
+            <p>Credits: quelly</p>
+            <img class="image" src="images/halftones/quelly2.png" alt="Halftone">
+            <button class="download" src="images/halftones/quelly2.png" filename="halftone2.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="halftone3">Halftone</h2>
+            <p>Credits: quelly</p>
+            <img class="image" src="images/halftones/quelly3.png" alt="Halftone">
+            <button class="download" src="images/halftones/quelly3.png" filename="halftone3.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="halftone4">Halftone</h2>
+            <p>Credits: quelly</p>
+            <img class="image" src="images/halftones/quelly4.png" alt="Halftone">
+            <button class="download" src="images/halftones/quelly4.png" filename="halftone4.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="halftone5">Halftone</h2>
+            <p>Credits: quelly</p>
+            <img class="image" src="images/halftones/quelly5.png" alt="Halftone">
+            <button class="download" src="images/halftones/quelly5.png" filename="halftone5.png">Download</button>
+        </div>
+        <div class="card" id="icons">
+            <h2 class="card-title" id="Skateboard">Skateboard</h2>
+            <p>Credits: Mozert</p>
+            <img class="image" src="images/vectors/labubsu_humn27.png" alt="Skateboard">
+            <button class="download" src="images/vectors/labubsu_humn27.png" filename="skateboard.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 1.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 1.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 2.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 2.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 3.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 3.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 4.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 4.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 5.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 5.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 6.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 6.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 7.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 7.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 8.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 8.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 9.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 9.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="effects">
+            <h2 class="card-title" id="suburst">Suburst</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/subbursts/Repeat group 10.png" alt="Suburst">
+            <button class="download" src="images/subbursts/Repeat group 10.png" filename="suburst.png">Download</button>
+        </div>
+        <div class="card" id="backgrounds">
+            <h2 class="card-title" id="background">Background</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/backgrounds/Roblox Baseplate 1920x1080.png" alt="Background">
+            <button class="download" src="images/backgrounds/Roblox Baseplate 1920x1080.png" filename="background.png">Download</button>
+        </div>
+        <div class="card" id="backgrounds">
+            <h2 class="card-title" id="background">Background</h2>
+            <p>Credits: stuxfian</p>
+            <img class="image" src="images/backgrounds/Frame.png" alt="Background">
+            <button class="download" src="images/backgrounds/Frame.png" filename="background.png">Download</button>
+        </div>
+</body>
+</html>
+
+<script>
+    document.querySelectorAll('.download').forEach(button => {
+        button.addEventListener('click', function() {
+            const src = this.getAttribute('src');
+            const filename = this.getAttribute(`filename`);
+            download(src, filename);
+        });
+    });
+
+    function download(url, filename) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    const resourcetabs = document.querySelectorAll('.resourcetab');
+    resourcetabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const id = this.id;
+            document.querySelectorAll('.card').forEach(card => {
+                if (card.id === id || card.id === '') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                } if (id === 'all') {
+                    card.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
