@@ -364,7 +364,7 @@
                         type="text"
                         id="discordId"
                         class="w-full p-3 rounded-lg glass-morphism-base text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out"
-                        placeholder="e.g., 785359327589695488"
+                        placeholder="e.g., YourUsername#1234 or YourUserID"
                         required
                     />
                 </div>
@@ -458,10 +458,12 @@
             }
 
             try {
-                const response = await fetch(webhookUrl, {
+                const response = await fetch('/api/suggestion', {
                     method: 'POST',
                     body: formData,
                 });
+
+
 
                 if (response.ok) {
                     submissionMessageElement.textContent = 'Suggestion submitted successfully!';
@@ -474,12 +476,12 @@
                     selectedFile = null;
                 } else {
                     const errorText = await response.text();
-                    submissionMessageElement.textContent = `Failed to submit suggestion`;
+                    submissionMessageElement.textContent = `Failed to submit suggestion: ${response.status} - ${errorText}`;
                     submissionMessageElement.classList.remove('text-green-400');
                     submissionMessageElement.classList.add('text-red-400');
                 }
             } catch (error) {
-                submissionMessageElement.textContent = `An unexpected error occurred. Please try again later.`;
+                submissionMessageElement.textContent = `An error occurred: ${error.message}`;
                 submissionMessageElement.classList.remove('text-green-400');
                 submissionMessageElement.classList.add('text-red-400');
             } finally {
