@@ -1,45 +1,56 @@
-const express = require('express');
-const multer = require('multer');
-const fetch = require('node-fetch');
-const dotenv = require('dotenv');
-const path = require('path');
+// File: api/suggestion.js
 
-dotenv.config();
-const app = express();
-const upload = multer();
+import formidable from 'formidable';
+import fs from 'fs';
 
-app.use(express.static(path.join(__dirname, 'public'))); // Serve frontend
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
-app.post('/api/suggestion', upload.single('file'), async (req, res) => {
-    const discordId = req.body.content?.split(':')?.[1]?.trim();
-    const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1396002265487380512/yMGk_iFl1gcQvuLQmFw_SIc2l-zBx-h4aFzVcmF5tOitrKyY8ffl8Dhj-ZcsZ-0EAoXR';
 
-    const form = new FormData();
-    form.append('content', `New suggestion from Discord ID: ${discordId}`);
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).send('Method Not Allowed');
+  }
 
-    if (req.file) {
-        form.append('file', req.file.buffer, req.file.originalname);
+  const form = new formidable.IncomingForm({ keepExtensions: true });
+
+  form.parse(req, async (err, fields, files) => {
+    if (err) {
+      console.error('Form parse error:', err);
+      return res.status(500).send('Could not parse form data');
+    }
+
+    const discordId = fields.discordId || 'Unknown ID';
+
+    const formData = new FormData();
+    formData.append('content', `New suggestion from Discord ID: ${discordId}`);
+
+    // If a file was uploaded, add it
+    if (files.file && files.file.filepath) {
+      const file = fs.createReadStream(files.file.filepath);
+      formData.append('file', file, files.file.originalFilename);
     }
 
     try {
-        const response = await fetch(webhookUrl, {
-            method: 'POST',
-            body: form,
-            headers: form.getHeaders()
-        });
+      const response = await fetch(DISCORD_WEBHOOK, {
+        method: 'POST',
+        body: formData,
+      });
 
-        if (!response.ok) {
-            return res.status(500).send('Failed to submit to Discord.');
-        }
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Discord webhook error:', errorText);
+        return res.status(response.status).send(errorText);
+      }
 
-        res.status(200).send('Success');
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Server error');
+      return res.status(200).send('Suggestion forwarded successfully!');
+    } catch (error) {
+      console.error('Webhook POST failed:', error);
+      return res.status(500).send('Failed to send to Discord');
     }
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-});
+  });
+}
