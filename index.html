@@ -19,11 +19,13 @@
         background-color: #131313;
         color: #333;
         margin: 0;
-        padding: 5px;
         align-content: center;
     }
     h1 {
         color: #ffffff;
+    }
+    .padtop {
+        padding-top: 70px;
     }
 
     nav {
@@ -32,12 +34,21 @@
         border-radius: 5px;
         align-items: center;
         align-content: center;
-        display: flex;
         justify-content: center;
-        margin-top: 20px;
         z-index: 9999999999999;
-        position: sticky;
-        top: 0;
+        position: fixed;
+        width: 100%;
+    }
+
+    .navdivider {
+        border-bottom: 1px solid #333;
+        margin: 0 20px;
+        height: 1px;
+        width: 100%;
+        position: fixed;
+        z-index: 99999999999999;
+        position: fixed;
+        top: 60px;
     }
 
     .links {
@@ -90,13 +101,8 @@
     .title:hover {
         font-size: 27px;
         text-shadow: #131313;
-        transition: linear 0.15s;
-    }
-
-    .title:hover::after {
+        transition: linear 0.1s;
         color: #ffffff;
-        font-size: 30px;
-        transition: linear 0.25s;
     }
     
     p {
@@ -121,15 +127,17 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease;
         align-items: center;
-        align-content: center;
+        align-content: space-between;
         text-align: center;
         display: flex;
         flex-direction: column;
-
+        border: #2b2b2b 1px solid;
     }
 
     .card:hover {
         transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border: #333;
     }
     .card h2 {
         margin-top: 0;
@@ -202,15 +210,27 @@
         text-decoration: none;
         transition: background-color 0.3s ease;
     }
+
+    button.resourcetab {
+        cursor: pointer;
+        border: none;
+        color: #ffffff;
+        background-color: #1a1a1a;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 </style>
 <body> 
     <nav>
         <ul class="links">
-            <li class="linktab"><a href="#Home">Home</a></li>
-            <li class="linktab"><a href="#Resources">Resources</a></li>
-            <li class="linktab"><a href="#Suggest">Suggest</a></li>
+            <li class="linktab"><a href="/index.html">Home</a></li>
+            <li class="linktab"><a href="/suggest.html">Suggest</a></li>
+            <li class="linktab"><a href="/programs.html">Programs</a></li>
         </ul>
     </nav>
+    <div class="navdivider"></div>
+    <div class="padtop"></div>
     <h1 class="title">Hello welcome to the UI Community - this website is WIP</h1>
     <p>A website to get resources and updates on the user interface community!</p>
     <div class="resourcetabs">
@@ -235,6 +255,11 @@
             <h2 class="card-title">realtimecolors</h2>
             <p>Ability to test color palletes on websites or anything really!</p>
             <a href="https://www.realtimecolors.com/?colors=050315-fbfbfe-2f27ce-dedcff-433bff&fonts=Inter-Inter", target="_blank", class="linktext">Link</a>
+        </div>
+        <div class="card" id="websites">
+            <h2 class="card-title">Reference database</h2>
+            <p>A website that allows you to see references of UIs, has a good amount.</p>
+            <a href="https://www.gameuidatabase.com/", target="_blank", class="linktext">Link</a>
         </div>
         <div class="card" id="websites">
             <h2 class="card-title">adobe colors</h2>
